@@ -12,6 +12,8 @@ ReactDOM.render(
       clientId="i62Hj5XwRuPauKxu7HO5XOLcWqJcslhJ"
       redirectUri={window.location.origin}
       // onRedirectCallback=""
+      audience="https://express.sample"
+      scope="openid profile email"
     >
       <App />
     </Auth0Provider>
