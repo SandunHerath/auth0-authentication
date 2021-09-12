@@ -3,6 +3,7 @@ var app = express();
 var jwt = require("express-jwt");
 var jwks = require("jwks-rsa");
 const cors = require("cors");
+const axios = require("axios");
 app.use(cors());
 
 var port = process.env.PORT || 5000;
@@ -24,9 +25,22 @@ app.get("/", function (req, res) {
   res.send("Hello normal route");
 });
 
-app.get("/protected", function (req, res) {
-  console.log(req.user);
-  res.send("Hello from protected route");
+app.get("/protected", async (req, res) => {
+  try {
+    const token = req.headers.authorization.split(" ")[1];
+    const response = await axios.get(
+      "https://dev-zgsgae4p.us.auth0.com/userInfo",
+      {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const userInfo = response.data;
+    res.send(userInfo);
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 app.use((req, res, next) => {
