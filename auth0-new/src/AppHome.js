@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
 import "antd/dist/antd.css";
 
@@ -11,10 +10,17 @@ import { Layout } from "antd";
 const { Header, Content, Footer } = Layout;
 function Home() {
   return (
-    <div>
-      <h2>Home</h2>
-      <Link to="/login"> Go to Login</Link>
-    </div>
+    <Layout className="mainLayout">
+      <Header>
+        <AppHeader />
+      </Header>
+      <Content>
+        <AppHome />
+      </Content>
+      <Footer>
+        <AppFooter />
+      </Footer>
+    </Layout>
   );
 }
 

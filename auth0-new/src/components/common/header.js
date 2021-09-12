@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Anchor, Drawer, Button } from 'antd';
+import { Anchor, Drawer, Button } from "antd";
+import { Link as Router_Link } from "react-router-dom";
 
 const { Link } = Anchor;
 
@@ -31,6 +32,7 @@ function AppHeader() {
             <Link href="#faq" title="FAQ" />
             <Link href="#pricing" title="Pricing" />
             <Link href="#contact" title="Contact" />
+            <Router_Link to={"/login"}>Login</Router_Link>
           </Anchor>
         </div>
         <div className="mobileVisible">
