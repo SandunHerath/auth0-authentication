@@ -8,18 +8,23 @@ app.use(cors());
 
 var port = process.env.PORT || 5000;
 
-var jwtCheck = jwt({
-  secret: jwks.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: "https://dev-zgsgae4p.us.auth0.com/.well-known/jwks.json",
-  }),
-  audience: "https://express.sample",
-  issuer: "https://dev-zgsgae4p.us.auth0.com/",
-  algorithms: ["RS256"],
-}).unless({ path: ["/"] });
-app.use(jwtCheck);
+app.post("/register", function (req, res) {
+  console.log(req);
+  res.send("got it");
+});
+
+// var jwtCheck = jwt({
+//   secret: jwks.expressJwtSecret({
+//     cache: true,
+//     rateLimit: true,
+//     jwksRequestsPerMinute: 5,
+//     jwksUri: "https://dev-zgsgae4p.us.auth0.com/.well-known/jwks.json",
+//   }),
+//   audience: "sandunherath124@gmail.com",
+//   issuer: "https://dev-zgsgae4p.us.auth0.com/",
+//   algorithms: ["RS256"],
+// }).unless({ path: ["/"] });
+// app.use(jwtCheck);
 
 app.get("/", function (req, res) {
   res.send("Hello normal route");
@@ -36,6 +41,7 @@ app.get("/protected", async (req, res) => {
         },
       }
     );
+    console.log(token);
     const userInfo = response.data;
     res.send(userInfo);
   } catch (error) {
