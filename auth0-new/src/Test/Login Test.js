@@ -13,7 +13,7 @@ function LoginTest() {
   async function CallApi() {
     try {
       const res = await axios.get("http://localhost:5000/");
-      console.log(res);
+      console.log(res.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -22,6 +22,22 @@ function LoginTest() {
     try {
       const token = await getAccessTokenSilently();
       const response = await axios.get("http://localhost:5000/protected", {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async function getPermitions() {
+   // const USER_ID = user.sub;
+
+    try {
+      const token = await getAccessTokenSilently();
+      const response = await axios.get("http://localhost:5000/perm", {
         headers: {
           authorization: `Bearer ${token}`,
         },
@@ -55,6 +71,7 @@ function LoginTest() {
 
       <button onClick={CallApi}>Call Api</button>
       <button onClick={CallProtectedApi}>Call Protected Api</button>
+      <button onClick={getPermitions}>getPermitions</button>
     </div>
   );
 }
