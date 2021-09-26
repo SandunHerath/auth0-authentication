@@ -6,18 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain="dev-zgsgae4p.us.auth0.com"
-      clientId="i62Hj5XwRuPauKxu7HO5XOLcWqJcslhJ"
-      redirectUri={window.location.origin}
-      // onRedirectCallback=""
-      audience="https://express.sample"
-      scope="openid profile email"
-    >
-      <App />
-    </Auth0Provider>
-  </React.StrictMode>,
+  <Auth0Provider
+    domain="dev-43-hfsb7.us.auth0.com"
+    clientId="9heiuqukHwIvzqb648HdyxHs5xFZcqTO"
+    redirectUri={window.location.origin}
+    audience="https://dev-43-hfsb7.us.auth0.com/api/v2/"
+    scope="openid profile email"
+  >
+    <App />
+  </Auth0Provider>,
   document.getElementById("root")
 );
 
