@@ -24,11 +24,12 @@ function App() {
           <Route exact path="/login">
             <LoginTest />
           </Route>
-          <Route exact path="/u">
+          <Route exact path="/uer">
             <UserHome />
           </Route>
-          {/* Admin panel routes */}
-          <Route>
+          Admin panel routes
+
+          <Route exact path="/admin">
             <AdminTopbar />
             <div className="container">
               <AdminSidebar />
