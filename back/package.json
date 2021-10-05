@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "express-jwt": "^6.1.0",
     "jwks-rsa": "^2.0.4",
+    "payhere-sdk": "^0.1.0",
     "request": "^2.88.2"
   },
   "devDependencies": {
