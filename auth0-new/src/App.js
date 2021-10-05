@@ -2,6 +2,8 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginTest from "./Test/Login Test";
 import Home from "./AppHome";
+import Checkout from "./Test/Checkout";
+import ThankYou from "./Test/ThankYou";
 
 import AdminSidebar from "./components/AdminComponents/sidebar/Sidebar";
 import AdminTopbar from "./components/AdminComponents/topbar/Topbar";
@@ -13,6 +15,10 @@ import NewUser from "./views/AdminPages/newUser/NewUser";
 import ProductList from "./views/AdminPages/productList/ProductList";
 import Product from "./views/AdminPages/product/Product";
 import NewProduct from "./views/AdminPages/newProduct/NewProduct";
+
+import { Payhere, AccountCategory } from "payhere-js-sdk";
+
+Payhere.init("1218791", AccountCategory.SANDBOX);
 function App() {
   return (
     <BrowserRouter>
@@ -27,8 +33,13 @@ function App() {
           <Route exact path="/uer">
             <UserHome />
           </Route>
-          Admin panel routes
-
+          <Route exact path="/payments">
+            <Checkout />
+          </Route>
+          <Route exact path="/thankyou">
+            <ThankYou />
+          </Route>
+          // Admin panel routes
           <Route exact path="/admin">
             <AdminTopbar />
             <div className="container">
