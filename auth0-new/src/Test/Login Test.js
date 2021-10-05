@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link as Router_Link } from "react-router-dom";
 import axios from "axios";
 function LoginTest() {
   const {
@@ -33,7 +34,7 @@ function LoginTest() {
   }
 
   async function getPermitions() {
-   // const USER_ID = user.sub;
+    // const USER_ID = user.sub;
 
     try {
       const token = await getAccessTokenSilently();
@@ -57,6 +58,10 @@ function LoginTest() {
         </li>
         <li>
           <button onClick={loginWithRedirect}>loginWithRedirect</button>
+        </li>
+        <li>
+         { isAuthenticated ? (
+          <Router_Link to={"/payments"}>Pay Fees</Router_Link>):null}
         </li>
         <li>
           <button onClick={logout}>logout</button>
