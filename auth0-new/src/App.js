@@ -4,6 +4,7 @@ import LoginTest from "./Test/Login Test";
 import Home from "./AppHome";
 import Checkout from "./Test/Checkout";
 import ThankYou from "./Test/ThankYou";
+import Class from "./Test/Class";
 
 import AdminSidebar from "./components/AdminComponents/sidebar/Sidebar";
 import AdminTopbar from "./components/AdminComponents/topbar/Topbar";
@@ -36,10 +37,13 @@ function App() {
           <Route exact path="/payments">
             <Checkout />
           </Route>
+          <Route exact path="/class">
+            <Class />
+          </Route>
           <Route exact path="/thankyou">
             <ThankYou />
           </Route>
-          // Admin panel routes
+          {/* // Admin panel routes */}
           <Route exact path="/admin">
             <AdminTopbar />
             <div className="container">

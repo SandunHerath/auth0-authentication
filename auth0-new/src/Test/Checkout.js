@@ -40,7 +40,7 @@ const Checkout = () => {
         onPayhereCheckoutError
       );
       const result = checkout.start();
-      console.log(result); //NE9WeDNhQVRyN280SkFkdVNVUFVaYzNYZzo0UFppM1Qwa3BCQjhRZVpYQ2ZQN2prNDhWSjBBRjZ2SHE0cDg3U3hEZHpsWiA=
+      console.log(result); //
     } catch (err) {
       console.log(err);
     }
