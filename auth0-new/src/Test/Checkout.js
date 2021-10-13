@@ -25,8 +25,8 @@ const Checkout = () => {
         country: "Sri Lanka",
       });
       const checkoutData = new CheckoutParams({
-        returnUrl: "http://localhost:3000/thankyou",
-        cancelUrl: "http://localhost:3000/payments",
+        returnUrl: "https://zoomhost.herokuapp.com/thankyou",
+        cancelUrl: "https://zoomhost.herokuapp.com/payments",
         notifyUrl: "http://localhost:5000/notify",
         order_id: "0123456",
         itemTitle: "Demo Item",
