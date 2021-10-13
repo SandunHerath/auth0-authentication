@@ -27,7 +27,7 @@ const Checkout = () => {
       const checkoutData = new CheckoutParams({
         returnUrl: "http://localhost:3000/thankyou",
         cancelUrl: "http://localhost:3000/payments",
-        notifyUrl: "http://localhost:8080/notify",
+        notifyUrl: "http://localhost:5000/notify",
         order_id: "0123456",
         itemTitle: "Demo Item",
         currency: CurrencyType.LKR,
@@ -48,7 +48,6 @@ const Checkout = () => {
 
   return (
     <div>
-      
       <button onClick={checkout}>Pay with Payhere</button>
     </div>
   );

@@ -70,6 +70,10 @@ function LoginTest() {
         <li>
           <Router_Link to={"/class"}>Loging to Class</Router_Link>
         </li>
+        <br></br>
+        <li>
+          <Router_Link to={"/pay"}>Pay Money</Router_Link>
+        </li>
         <li>
           <button onClick={logout}>logout</button>
         </li>
