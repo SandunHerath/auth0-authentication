@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginTest from "./Test/Login Test";
 import Home from "./AppHome";
 import Checkout from "./Test/Checkout";
+import Pay from "./Test/PayHere";
 import ThankYou from "./Test/ThankYou";
 import Class from "./Test/Class";
 
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route exact path="/class">
             <Class />
+          </Route>
+          <Route exact path="/pay">
+            <Pay />
           </Route>
           <Route exact path="/thankyou">
             <ThankYou />
