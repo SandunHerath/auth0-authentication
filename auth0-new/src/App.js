@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginTest from "./Test/Login Test";
 import Home from "./AppHome";
-import Checkout from "./Test/Checkout";
+
 import Pay from "./Test/PayHere";
 import ThankYou from "./Test/ThankYou";
 import Class from "./Test/Class";
@@ -18,9 +18,6 @@ import ProductList from "./views/AdminPages/productList/ProductList";
 import Product from "./views/AdminPages/product/Product";
 import NewProduct from "./views/AdminPages/newProduct/NewProduct";
 
-import { Payhere, AccountCategory } from "payhere-js-sdk";
-
-Payhere.init("1218791", AccountCategory.SANDBOX);
 function App() {
   return (
     <BrowserRouter>
@@ -36,7 +33,7 @@ function App() {
             <UserHome />
           </Route>
           <Route exact path="/payments">
-            <Checkout />
+            <Pay />
           </Route>
           <Route exact path="/class">
             <Class />
